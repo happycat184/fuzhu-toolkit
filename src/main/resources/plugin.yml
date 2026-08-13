@@ -57,6 +57,16 @@ commands:
   depth: {description: Show current block height}
   itemname: {description: Rename held item}
   itemlore: {description: Add lore to held item}
+  sit: {description: Sit on the ground}
+  glow: {description: Toggle glowing effect}
+  biome: {description: Show current biome information}
+  chunkinfo: {description: Show current chunk diagnostics}
+  light: {description: Check block light levels}
+  durability: {description: Show held item durability}
+  itemid: {description: Show held item namespaced ID}
+  deathloc: {description: Show your last death location}
+  invsort: {description: Sort your inventory}
+  chatmute: {description: Toggle global chat}
 permissions:
   fuzhu.admin:
     default: op

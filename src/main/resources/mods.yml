@@ -41,6 +41,16 @@ modules:
   Depth: true
   ItemName: true
   ItemLore: true
+  Sit: true
+  Glow: true
+  Biome: true
+  ChunkInfo: true
+  Light: true
+  Durability: true
+  ItemId: true
+  DeathLoc: true
+  InvSort: true
+  ChatMute: true
 access:
   BlockSearch: op
   BetterBossbar: op
@@ -84,3 +94,13 @@ access:
   Depth: op
   ItemName: op
   ItemLore: op
+  Sit: op
+  Glow: op
+  Biome: op
+  ChunkInfo: op
+  Light: op
+  Durability: op
+  ItemId: op
+  DeathLoc: op
+  InvSort: op
+  ChatMute: op

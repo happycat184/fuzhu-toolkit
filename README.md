@@ -58,6 +58,16 @@ plugins/FuzhuToolkit/
 | Depth | `/depth` | 查看当前高度、海平面和世界范围 |
 | ItemName | `/itemname <名称>` | 修改手中物品名称 |
 | ItemLore | `/itemlore <说明>` | 为手中物品添加 Lore |
+| Sit | `/sit` | 坐下互动动作 |
+| Glow | `/glow` | 切换自身发光轮廓 |
+| Biome | `/biome` | 查看生物群系、温度和湿度 |
+| ChunkInfo | `/chunkinfo` | 查看区块坐标、实体数和加载状态 |
+| Light | `/light` | 查看天空光与方块光等级 |
+| Durability | `/durability` | 查看手中物品剩余耐久 |
+| ItemId | `/itemid` | 查看物品 Namespaced ID |
+| DeathLoc | `/deathloc` | 记录并查看最近死亡地点 |
+| InvSort | `/invsort` | 按物品 ID 整理背包 |
+| ChatMute | `/chatmute` | 管理员临时关闭普通玩家聊天 |
 
 ## 模块控制
 
