@@ -50,6 +50,23 @@ bossbar:
 /bb color <颜色>
 ```
 
+### PrivateContainer 私人仓库
+
+```yaml
+private-container:
+  pages: 3
+  rows: 6
+  title: '&8私人仓库 &7- 第%page%页'
+```
+
+- `/privatecontainer` 或 `/pv`：打开第 1 页。
+- `/pv 2`：打开指定页码。
+- `pages`：每位玩家可使用的页数，范围 1-20；每页最多 54 格。
+- `rows`：每页行数，范围 1-6；建议保持 6 以获得最大容量。
+- `title`：界面标题，`%page%` 会替换为当前页码。
+- 玩家关闭界面、退出服务器或插件关闭时自动保存。
+- 数据文件为 `configs/PrivateContainer.yml`，按 UUID 分开保存，管理员不共享玩家仓库。
+
 ## mods.yml
 
 `modules` 控制模块是否启用：

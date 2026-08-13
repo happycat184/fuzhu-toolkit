@@ -68,6 +68,7 @@ plugins/FuzhuToolkit/
 | DeathLoc | `/deathloc` | 记录并查看最近死亡地点 |
 | InvSort | `/invsort` | 按物品 ID 整理背包 |
 | ChatMute | `/chatmute` | 管理员临时关闭普通玩家聊天 |
+| PrivateContainer | `/privatecontainer`、`/pv [页码]` | 玩家专属多页存储空间，独立持久化 |
 
 ## 模块控制
 

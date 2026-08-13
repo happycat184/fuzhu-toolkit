@@ -25,7 +25,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
         registerModules();
         Objects.requireNonNull(getCommand("fuzhu")).setExecutor(this);
         Objects.requireNonNull(getCommand("fuzhu")).setTabCompleter(this);
-        for (String command : List.of("bs","bb","spawn","sethome","home","warp","clearlag","playerinfo","feed","heal","weather","ptime","back","rules","motd","afk","near","tpa","tpaccept","tpdeny","rtp","invsee","ec","fly","gm","nick","repair","hat","anvil","craft","kit","vanish","chatcolor","broadcast","serverstats","ping","online","trash","condense","more","gtime","top","depth","itemname","itemlore","sit","glow","biome","chunkinfo","light","durability","itemid","deathloc","invsort","chatmute")) {
+        for (String command : List.of("bs","bb","spawn","sethome","home","warp","clearlag","playerinfo","feed","heal","weather","ptime","back","rules","motd","afk","near","tpa","tpaccept","tpdeny","rtp","invsee","ec","fly","gm","nick","repair","hat","anvil","craft","kit","vanish","chatcolor","broadcast","serverstats","ping","online","trash","condense","more","gtime","top","depth","itemname","itemlore","sit","glow","biome","chunkinfo","light","durability","itemid","deathloc","invsort","chatmute","privatecontainer","pv")) {
             PluginCommand c = getCommand(command); if (c != null) { c.setExecutor(this); c.setTabCompleter(this); }
         }
         modules.values().forEach(m -> { if (mods.getBoolean("modules." + m.id(), true)) { m.enable(); getLogger().info("Enabled module " + m.id()); } });
@@ -47,7 +47,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
         add(new AdditionalModules.ItemName(this)); add(new AdditionalModules.ItemLore(this));
         add(new NovelModules.Sit(this)); add(new NovelModules.Glow(this)); add(new NovelModules.Biome(this)); add(new NovelModules.ChunkInfo(this));
         add(new NovelModules.Light(this)); add(new NovelModules.Durability(this)); add(new NovelModules.ItemId(this)); add(new NovelModules.DeathLoc(this));
-        add(new NovelModules.InvSort(this)); add(new NovelModules.ChatMute(this));
+        add(new NovelModules.InvSort(this)); add(new NovelModules.ChatMute(this)); add(new PrivateContainerModule(this));
     }
     private void add(ToolkitModule module) { modules.put(module.id().toLowerCase(Locale.ROOT), module); }
     public ToolkitModule module(String id) { return modules.get(id.toLowerCase(Locale.ROOT)); }
@@ -68,7 +68,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
             case "itemname" -> module("ItemName"); case "itemlore" -> module("ItemLore");
             case "sit" -> module("Sit"); case "glow" -> module("Glow"); case "biome" -> module("Biome"); case "chunkinfo" -> module("ChunkInfo");
             case "light" -> module("Light"); case "durability" -> module("Durability"); case "itemid" -> module("ItemId"); case "deathloc" -> module("DeathLoc");
-            case "invsort" -> module("InvSort"); case "chatmute" -> module("ChatMute"); default -> null;
+            case "invsort" -> module("InvSort"); case "chatmute" -> module("ChatMute"); case "privatecontainer", "pv" -> module("PrivateContainer"); default -> null;
         };
     }
     public Collection<ToolkitModule> modules() { return modules.values(); }
@@ -174,6 +174,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
             case "deathloc" -> "/deathloc";
             case "invsort" -> "/invsort";
             case "chatmute" -> "/chatmute";
+            case "privatecontainer" -> "/privatecontainer | /pv [页码]";
             default -> null;
         };
     }

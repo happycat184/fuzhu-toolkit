@@ -67,6 +67,8 @@ commands:
   deathloc: {description: Show your last death location}
   invsort: {description: Sort your inventory}
   chatmute: {description: Toggle global chat}
+  privatecontainer: {description: Open your private container}
+  pv: {description: Open a private container page}
 permissions:
   fuzhu.admin:
     default: op

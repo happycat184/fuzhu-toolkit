@@ -51,6 +51,7 @@ modules:
   DeathLoc: true
   InvSort: true
   ChatMute: true
+  PrivateContainer: true
 access:
   BlockSearch: op
   BetterBossbar: op
@@ -104,3 +105,4 @@ access:
   DeathLoc: op
   InvSort: op
   ChatMute: op
+  PrivateContainer: op
