@@ -82,3 +82,21 @@ plugins/FuzhuToolkit/
 构建：`mvn -DskipTests package`。
 
 详细的配置项、BossBar 动画参数、模块开关和权限策略请查看 [docs/CONFIGURATION.md](docs/CONFIGURATION.md)。
+
+## 自动构建与发行
+
+GitHub Actions 工作流位于 `.github/workflows/`：
+
+- 推送到 `main` 或创建 Pull Request：自动执行 Maven 构建检查。
+- 推送版本标签：自动构建并创建 GitHub Release，上传 JAR。
+
+发布新版本：
+
+```bash
+git commit -am "Release v1.0.1"
+git push origin main
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+标签必须使用 `v主版本.次版本.修订版本` 格式，例如 `v1.0.1`。仓库 Actions 需要启用 `Settings → Actions → General → Workflow permissions → Read and write permissions`，工作流使用 `GITHUB_TOKEN` 创建发行版。
