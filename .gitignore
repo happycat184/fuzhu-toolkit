@@ -1,0 +1,21 @@
+# Build output
+/target/
+/compile-check-*/
+
+# Local tool/runtime downloads
+/.maven/
+
+# IDE metadata
+/.idea/
+/.vscode/
+*.iml
+
+# Java/Maven generated files
+*.class
+*.log
+hs_err_pid*
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

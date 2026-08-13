@@ -1,0 +1,13 @@
+prefix: '&8[&b腐竹工具箱&8] &7'
+search-default-radius: 100
+search-max-radius: 300
+bossbar:
+  color: BLUE
+  style: SOLID
+  animation:
+    enabled: false
+    step: 0.02
+    period-ticks: 2
+    colors: [BLUE, GREEN, YELLOW, RED, PURPLE]
+welcome-message: '&b欢迎 &f%player% &b加入服务器！'
+motd: '&b欢迎来到服务器！使用 /fuzhu list 查看工具箱模块。'

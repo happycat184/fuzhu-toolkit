@@ -1,0 +1,3 @@
+package cn.fuzhu.toolkit.modules;
+import cn.fuzhu.toolkit.FuzhuToolkitPlugin; import cn.fuzhu.toolkit.module.AbstractModule; import org.bukkit.command.*; import org.bukkit.entity.Item;
+public class ClearLagModule extends AbstractModule {public ClearLagModule(FuzhuToolkitPlugin p){super(p);config=p.moduleConfig(id());}public String id(){return "ClearLag";}public String description(){return "清理世界掉落物";}public boolean handle(CommandSender s,String l,String[] a){if(!s.hasPermission("fuzhu.admin")){plugin.msg(s,"&c你没有权限。");return true;}int n=0;for(var w:plugin.getServer().getWorlds())for(var e:w.getEntitiesByClass(Item.class)){e.remove();n++;}plugin.broadcast("&a已清理 &f"+n+" &a个掉落物。");return true;}}

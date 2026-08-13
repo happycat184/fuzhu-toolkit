@@ -1,0 +1,3 @@
+package cn.fuzhu.toolkit.modules;
+import cn.fuzhu.toolkit.FuzhuToolkitPlugin; import cn.fuzhu.toolkit.module.AbstractModule; import org.bukkit.command.*; import org.bukkit.entity.Player;
+public class PersonalTimeModule extends AbstractModule {public PersonalTimeModule(FuzhuToolkitPlugin p){super(p);config=p.moduleConfig(id());}public String id(){return "PersonalTime";}public String description(){return "/ptime day|night 设置个人时间";}public boolean handle(CommandSender s,String l,String[] a){Player p=ModuleUtil.player(plugin,s);if(p==null)return true;if(a.length==0){plugin.msg(s,"&e/ptime day|night");return true;}p.setPlayerTime(a[0].equalsIgnoreCase("night")?18000:1000,false);plugin.msg(s,"&a个人时间已更新。");return true;}}

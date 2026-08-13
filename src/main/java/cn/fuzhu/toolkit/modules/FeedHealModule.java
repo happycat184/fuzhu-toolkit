@@ -1,0 +1,3 @@
+package cn.fuzhu.toolkit.modules;
+import cn.fuzhu.toolkit.FuzhuToolkitPlugin; import cn.fuzhu.toolkit.module.AbstractModule; import org.bukkit.command.*; import org.bukkit.entity.Player;
+public class FeedHealModule extends AbstractModule {public FeedHealModule(FuzhuToolkitPlugin p){super(p);config=p.moduleConfig(id());}public String id(){return "FeedHeal";}public String description(){return "/feed 和 /heal 快速恢复状态";}public boolean handle(CommandSender s,String l,String[] a){Player p=ModuleUtil.player(plugin,s);if(p==null)return true;if(l.equalsIgnoreCase("feed")){p.setFoodLevel(20);p.setSaturation(20);plugin.msg(s,"&a饥饿值已恢复。");}else{p.setHealth(p.getMaxHealth());p.setFireTicks(0);plugin.msg(s,"&a生命值已恢复。");}return true;}}

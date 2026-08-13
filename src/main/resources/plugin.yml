@@ -1,0 +1,54 @@
+name: FuzhuToolkit
+version: 1.0.0
+main: cn.fuzhu.toolkit.FuzhuToolkitPlugin
+api-version: '1.21'
+author: Fuzhu
+description: Modular all-in-one Paper server toolkit
+commands:
+  fuzhu:
+    description: Fuzhu Toolkit main command
+    usage: '/fuzhu <list|enable|disable|setop|setnop|reload>'
+  bs:
+    description: Search nearby blocks
+    usage: '/bs <block> [radius]'
+  bb:
+    description: Set the global boss bar text
+    usage: '/bb <text>'
+  spawn: {description: Teleport to spawn}
+  sethome: {description: Set your home}
+  home: {description: Teleport home}
+  warp: {description: Manage warps}
+  clearlag: {description: Remove dropped items}
+  playerinfo: {description: Show player information}
+  feed: {description: Restore hunger}
+  heal: {description: Restore health}
+  weather: {description: Set weather}
+  ptime: {description: Set personal time}
+  back: {description: Return to previous location}
+  rules: {description: Show server rules}
+  motd: {description: Show server motd}
+  afk: {description: Toggle AFK status}
+  near: {description: List nearby players}
+  tpa: {description: Send teleport request}
+  tpaccept: {description: Accept teleport request}
+  tpdeny: {description: Deny teleport request}
+  rtp: {description: Random teleport}
+  invsee: {description: View player inventory}
+  ec: {description: Open ender chest}
+  fly: {description: Toggle flight}
+  gm: {description: Change game mode}
+  nick: {description: Set display nickname}
+  repair: {description: Repair held item}
+  hat: {description: Wear held item as hat}
+  anvil: {description: Open anvil}
+  craft: {description: Open crafting table}
+  kit: {description: Claim starter kit}
+  vanish: {description: Toggle vanish}
+  chatcolor: {description: Set chat color}
+  broadcast: {description: Broadcast a message}
+  serverstats: {description: Show server statistics}
+permissions:
+  fuzhu.admin:
+    default: op
+  fuzhu.tools:
+    default: true
