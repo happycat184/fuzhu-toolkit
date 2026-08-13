@@ -47,6 +47,16 @@ commands:
   chatcolor: {description: Set chat color}
   broadcast: {description: Broadcast a message}
   serverstats: {description: Show server statistics}
+  ping: {description: Show your latency}
+  online: {description: List online players}
+  trash: {description: Open a disposal inventory}
+  condense: {description: Condense ingots into blocks}
+  more: {description: Fill held stack}
+  gtime: {description: Set world time}
+  top: {description: Teleport to highest safe block}
+  depth: {description: Show current block height}
+  itemname: {description: Rename held item}
+  itemlore: {description: Add lore to held item}
 permissions:
   fuzhu.admin:
     default: op

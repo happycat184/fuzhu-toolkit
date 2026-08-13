@@ -48,6 +48,16 @@ plugins/FuzhuToolkit/
 | ChatColor | `/chatcolor <颜色>` | 设置聊天颜色 |
 | Broadcast | `/broadcast <文本>` | 管理员全服广播 |
 | ServerStats | `/serverstats` | 查看 TPS、内存和在线人数 |
+| Ping | `/ping` | 查看个人延迟 |
+| Online | `/online` | 查看在线玩家 |
+| Trash | `/trash` | 打开临时垃圾桶，关闭时自动清空 |
+| Condense | `/condense` | 九个铁/金/铜/钻石/绿宝石/煤压缩成方块 |
+| More | `/more` | 将手中物品补满一组 |
+| GlobalTime | `/gtime day\|night\|noon` | 设置当前世界时间（管理权限） |
+| Top | `/top` | 传送到当前位置最高安全点 |
+| Depth | `/depth` | 查看当前高度、海平面和世界范围 |
+| ItemName | `/itemname <名称>` | 修改手中物品名称 |
+| ItemLore | `/itemlore <说明>` | 为手中物品添加 Lore |
 
 ## 模块控制
 
@@ -60,3 +70,5 @@ plugins/FuzhuToolkit/
 模块开关与访问策略会保存到 `mods.yml`，模块专属数据保存在 `configs/`，新增模块只需实现 `ToolkitModule` 并在主类注册。
 
 构建：`mvn -DskipTests package`。
+
+详细的配置项、BossBar 动画参数、模块开关和权限策略请查看 [docs/CONFIGURATION.md](docs/CONFIGURATION.md)。

@@ -25,7 +25,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
         registerModules();
         Objects.requireNonNull(getCommand("fuzhu")).setExecutor(this);
         Objects.requireNonNull(getCommand("fuzhu")).setTabCompleter(this);
-        for (String command : List.of("bs","bb","spawn","sethome","home","warp","clearlag","playerinfo","feed","heal","weather","ptime","back","rules","motd","afk","near","tpa","tpaccept","tpdeny","rtp","invsee","ec","fly","gm","nick","repair","hat","anvil","craft","kit","vanish","chatcolor","broadcast","serverstats")) {
+        for (String command : List.of("bs","bb","spawn","sethome","home","warp","clearlag","playerinfo","feed","heal","weather","ptime","back","rules","motd","afk","near","tpa","tpaccept","tpdeny","rtp","invsee","ec","fly","gm","nick","repair","hat","anvil","craft","kit","vanish","chatcolor","broadcast","serverstats","ping","online","trash","condense","more","gtime","top","depth","itemname","itemlore")) {
             PluginCommand c = getCommand(command); if (c != null) { c.setExecutor(this); c.setTabCompleter(this); }
         }
         modules.values().forEach(m -> { if (mods.getBoolean("modules." + m.id(), true)) { m.enable(); getLogger().info("Enabled module " + m.id()); } });
@@ -42,6 +42,9 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
         add(new ExtraModules.FlyModule(this)); add(new ExtraModules.GameModeModule(this)); add(new ExtraModules.NickModule(this)); add(new ExtraModules.RepairModule(this));
         add(new ExtraModules.HatModule(this)); add(new ExtraModules.AnvilModule(this)); add(new ExtraModules.CraftModule(this)); add(new ExtraModules.KitModule(this));
         add(new ExtraModules.VanishModule(this)); add(new ExtraModules.ChatColorModule(this)); add(new ExtraModules.BroadcastModule(this)); add(new ExtraModules.ServerStatsModule(this));
+        add(new AdditionalModules.Ping(this)); add(new AdditionalModules.Online(this)); add(new AdditionalModules.Trash(this)); add(new AdditionalModules.Condense(this));
+        add(new AdditionalModules.More(this)); add(new AdditionalModules.GlobalTime(this)); add(new AdditionalModules.Top(this)); add(new AdditionalModules.Depth(this));
+        add(new AdditionalModules.ItemName(this)); add(new AdditionalModules.ItemLore(this));
     }
     private void add(ToolkitModule module) { modules.put(module.id().toLowerCase(Locale.ROOT), module); }
     public ToolkitModule module(String id) { return modules.get(id.toLowerCase(Locale.ROOT)); }
@@ -56,7 +59,10 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
             case "ec" -> module("EnderChest"); case "fly" -> module("Fly"); case "gm" -> module("GameMode"); case "nick" -> module("Nick");
             case "repair" -> module("Repair"); case "hat" -> module("Hat"); case "anvil" -> module("Anvil"); case "craft" -> module("Craft");
             case "kit" -> module("Kit"); case "vanish" -> module("Vanish"); case "chatcolor" -> module("ChatColor");
-            case "broadcast" -> module("Broadcast"); case "serverstats" -> module("ServerStats"); default -> null;
+            case "broadcast" -> module("Broadcast"); case "serverstats" -> module("ServerStats");
+            case "ping" -> module("Ping"); case "online" -> module("Online"); case "trash" -> module("Trash"); case "condense" -> module("Condense");
+            case "more" -> module("More"); case "gtime" -> module("GlobalTime"); case "top" -> module("Top"); case "depth" -> module("Depth");
+            case "itemname" -> module("ItemName"); case "itemlore" -> module("ItemLore"); default -> null;
         };
     }
     public Collection<ToolkitModule> modules() { return modules.values(); }
@@ -142,6 +148,16 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
             case "chatcolor" -> "/chatcolor <颜色>|reset";
             case "broadcast" -> "/broadcast <文本>";
             case "serverstats" -> "/serverstats";
+            case "ping" -> "/ping";
+            case "online" -> "/online";
+            case "trash" -> "/trash";
+            case "condense" -> "/condense";
+            case "more" -> "/more";
+            case "globaltime" -> "/gtime day|night|noon";
+            case "top" -> "/top";
+            case "depth" -> "/depth";
+            case "itemname" -> "/itemname <名称>";
+            case "itemlore" -> "/itemlore <说明>";
             default -> null;
         };
     }

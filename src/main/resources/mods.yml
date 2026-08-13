@@ -31,6 +31,16 @@ modules:
   ChatColor: true
   Broadcast: true
   ServerStats: true
+  Ping: true
+  Online: true
+  Trash: true
+  Condense: true
+  More: true
+  GlobalTime: true
+  Top: true
+  Depth: true
+  ItemName: true
+  ItemLore: true
 access:
   BlockSearch: op
   BetterBossbar: op
@@ -64,3 +74,13 @@ access:
   ChatColor: op
   Broadcast: op
   ServerStats: op
+  Ping: op
+  Online: op
+  Trash: op
+  Condense: op
+  More: op
+  GlobalTime: op
+  Top: op
+  Depth: op
+  ItemName: op
+  ItemLore: op
