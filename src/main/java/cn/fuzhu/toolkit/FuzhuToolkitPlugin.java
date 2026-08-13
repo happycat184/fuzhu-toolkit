@@ -174,7 +174,7 @@ public final class FuzhuToolkitPlugin extends JavaPlugin implements CommandExecu
             case "deathloc" -> "/deathloc";
             case "invsort" -> "/invsort";
             case "chatmute" -> "/chatmute";
-            case "privatecontainer" -> "/privatecontainer | /pv [页码]";
+            case "privatecontainer" -> "/pv create|open|give|removeperm|list";
             default -> null;
         };
     }

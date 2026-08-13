@@ -12,6 +12,4 @@ bossbar:
 welcome-message: '&b欢迎 &f%player% &b加入服务器！'
 motd: '&b欢迎来到服务器！使用 /fuzhu list 查看工具箱模块。'
 private-container:
-  pages: 3
   rows: 6
-  title: '&8私人仓库 &7- 第%page%页'
